@@ -1,15 +1,21 @@
-// import client from 'twilio';
+import express from 'express';
+import dotenv from 'dotenv';
+import cors from 'cors';
+import chatsRouter from './routes/chats';
 
-// // Your AccountSID and Auth Token from console.twilio.com
-// const accountSid = 'ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX';
-// const authToken = 'your_auth_token';
 
-// const client = require('twilio')(accountSid, authToken);
+dotenv.config();
+const app = express();
+app.use(cors());
+app.use(express.json());
+const port = process.env.PORT || 3000;
 
-// client.messages
-//    .create({
-//       body: 'Hello from twilio-node',
-//       to: '+12345678901', // Text your number
-//       from: '+12345678901', // From a valid Twilio number
-//    })
-//    .then((message) => console.log(message.sid));
+app.use('/api/chats', chatsRouter);
+
+app.all('/', function(req, res) {
+  res.json({'error': "not found"});
+ });
+
+app.listen(port, () => {
+  console.log(`Server is running on port http://localhost:${port}`);
+});
