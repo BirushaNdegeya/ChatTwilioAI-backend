@@ -1,7 +1,7 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
 
-export default async function geminiModel({ message }: { message: string }): Promise<string> {
+export default async function geminiModel({ message }) {
   const genAI = new GoogleGenerativeAI('AIzaSyDB2XZJwiiBp1SEylnyyLhNI9e_dxxJZzY');
   
 
