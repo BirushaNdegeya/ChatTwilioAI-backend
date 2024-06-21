@@ -10,5 +10,6 @@ pnpm start
 ### chat routes
 
 ```
-api/chats
+https://chattwilioai-backend.onrender.com/api/chats
 ```
+[chats api](https://chattwilioai-backend.onrender.com/api/chats)

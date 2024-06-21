@@ -1,9 +1,7 @@
 import { Router } from "express";
-
+import { postChat } from '../api/chats.js'
 const chatsRouter = Router();
 
-chatsRouter.get("/", (req, res) => {
-  res.json({ message: "Hello from chats" });
-});
+chatsRouter.post('/chats', postChat);
 
 export default chatsRouter;

@@ -10,7 +10,7 @@ app.use(cors());
 app.use(express.json());
 const port = process.env.PORT || 3000;
 
-app.use('/api/chats', chatsRouter);
+app.use('/api', chatsRouter);
 
 app.all('/', function(req, res) {
   res.json({'error': "not found"});
