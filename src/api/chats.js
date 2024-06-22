@@ -18,7 +18,6 @@ export async function askQuestion(req, res) {
          res.status(403).json({ error: 'some fields are missing' });
          return;
       }
-      const genAI = new GoogleGenerativeAI('AIzaSyDB2XZJwiiBp1SEylnyyLhNI9e_dxxJZzY');
       const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
       const prompt = req.body.message;
       const result = await model.generateContent(prompt);
