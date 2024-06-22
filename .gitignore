@@ -28,3 +28,7 @@ TestResults.xml
 # env
 
 .env
+
+# templates 
+
+temp.js
